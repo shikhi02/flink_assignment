@@ -1,0 +1,32 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Event",
+    "description": "An event from flink site",
+    "properties": {
+      "event_type": {
+        "description": "Type of an event",
+        "type": "integer"
+      },
+      "event_time": {
+        "description": "Time when the event arrives",
+        "type": "string"
+      },
+      "data": {
+        "type": "object",
+        "properties": {
+          "user_email": {
+            "type": "string"
+          },
+          "phone_number": {
+            "type": "string"
+          }
+        },
+        "required": [ "user_email", "phone_number" ]
+      },
+      "processing_date":{
+        "description": "Date of the event",
+        "type": "string"
+      }
+    },
+    "required": [ "event_type", "event_time", "data", "processing_date" ]
+  }
